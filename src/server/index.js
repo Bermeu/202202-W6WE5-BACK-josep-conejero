@@ -24,7 +24,11 @@ const risetheServer = (port) =>
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.use("/robots", robotsRouter);
+// app.use("/robots", robotsRouter);
+app.get("/robots", (req, res, next) => {
+  res.status(200);
+  res.json({ mensaje: "ha entrado" });
+});
 
 app.use(notFoundError);
 app.use(generalError);
