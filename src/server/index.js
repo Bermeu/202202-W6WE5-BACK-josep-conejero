@@ -1,8 +1,8 @@
-const debug = require("debug")("things:server");
+const debug = require("debug")("robots:server");
 const express = require("express");
 const morgan = require("morgan");
 const { notFoundError, generalError } = require("./middlewares/errors");
-const robotsRouter = require("");
+const robotsRouter = require("./routers/robots");
 
 const app = express();
 

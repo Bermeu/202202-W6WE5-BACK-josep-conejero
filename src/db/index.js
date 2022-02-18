@@ -1,4 +1,4 @@
-const debug = require("debug")("things:db");
+const debug = require("debug")("robots:db");
 const mongoose = require("mongoose");
 
 const connectToDataBase = (connectionString) =>

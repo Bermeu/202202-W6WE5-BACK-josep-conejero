@@ -1,4 +1,4 @@
-const debug = require("debug")("calculator:server:middlewares:errors");
+const debug = require("debug")("robot:server:middlewares:errors");
 
 const notFoundError = (req, res) => {
   res.status(404);

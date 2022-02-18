@@ -1,5 +1,5 @@
 const express = require("express");
-const ThingIKnow = require("../../db/models/ThingIKnow");
+const Robot = require("../../db/models/Robot");
 
 const router = express.Router();
 
