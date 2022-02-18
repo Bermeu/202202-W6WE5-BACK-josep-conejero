@@ -8,7 +8,7 @@ const RobotSchema = new Schema({
   picture: String,
   velocity: Number,
   resistance: Number,
-  creationDate: Date,
+  creationDate: String,
 });
 
 const Robot = model("Robot", RobotSchema, "robots");
