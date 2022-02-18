@@ -2,7 +2,7 @@ const debug = require("debug")("things:server");
 const express = require("express");
 const morgan = require("morgan");
 const { notFoundError, generalError } = require("./middlewares/errors");
-const thingsIKnowRouter = require("./routers/thingsIKnow");
+const robotsRouter = require("");
 
 const app = express();
 
@@ -24,7 +24,7 @@ const risetheServer = (port) =>
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.use("/things", thingsIKnowRouter);
+app.use("/robots", robotsRouter);
 
 app.use(notFoundError);
 app.use(generalError);
