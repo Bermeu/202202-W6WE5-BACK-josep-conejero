@@ -2,7 +2,7 @@ const debug = require("debug")("robots:server");
 const express = require("express");
 const morgan = require("morgan");
 const { notFoundError, generalError } = require("./middlewares/errors");
-const robotsRouter = require("./routers/robots");
+const robotsRouter = require("./routers/robotsRooter");
 
 const app = express();
 
@@ -25,10 +25,6 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 app.get("/robots", robotsRouter);
-/* app.get("/robots", (req, res, next) => {
-  res.status(200);
-  res.json({ mensaje: "ha entrado" });
-}); */
 
 app.use(notFoundError);
 app.use(generalError);
