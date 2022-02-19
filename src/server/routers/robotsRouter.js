@@ -1,9 +1,11 @@
 const express = require("express");
+const debug = require("debug")("robots:router");
 const Robot = require("../../db/models/Robot");
 
 const robotsRouter = express.Router();
 
 robotsRouter.get("/robots", async (req, res) => {
+  debug("casundena");
   const robots = await Robot.find();
   res.json({ robots });
 });
