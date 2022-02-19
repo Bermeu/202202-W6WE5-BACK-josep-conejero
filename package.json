@@ -4,8 +4,8 @@
   "description": "Robots",
   "main": "./src/index.js",
   "scripts": {
-    "start": "node .",
-    "start-dev": "nodemon . -q"
+    "start": "node src",
+    "start-dev": "nodemon src -q"
   },
   "keywords": [],
   "author": "",
