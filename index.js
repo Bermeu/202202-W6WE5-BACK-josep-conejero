@@ -3,7 +3,7 @@ const debug = require("debug")("robots:root");
 const connectToDataBase = require("./src/db/index");
 const risetheServer = require("./src/server/index");
 
-const port = process.env.SERVER_PORT || 4000;
+const port = process.env.PORT || 4000;
 const mongoConnection = process.env.MONGO_STRING_PRODUCTION;
 
 (async () => {
