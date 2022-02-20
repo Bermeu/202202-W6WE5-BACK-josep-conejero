@@ -1,6 +1,7 @@
 const debug = require("debug")("robots:server");
 const express = require("express");
 const morgan = require("morgan");
+const cors = require("cors");
 const { notFoundError, generalError } = require("./middlewares/errors");
 const robotsRouter = require("./routers/robotsRouter");
 
@@ -24,6 +25,7 @@ const risetheServer = (port) =>
 app.use(morgan("dev"));
 app.use(express.json());
 
+app.use(cors());
 app.use("/robots", robotsRouter);
 
 app.use(notFoundError);
