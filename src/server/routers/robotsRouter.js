@@ -12,14 +12,9 @@ const {
 const robotsRouter = express.Router();
 
 robotsRouter.get("/", getAllRobots);
-
 robotsRouter.get("/:idRobot", getRobot);
-
-robotsRouter.post("/robots", async (req, res) => {
-  const newRobot = req.body;
-  const createdRobot = await Robot.create(newRobot);
-  res.status(201);
-  res.json(createdRobot);
-});
+robotsRouter.post("/new-robot", createRobot);
+robotsRouter.put("/robot/:idRobot", updateRobot);
+robotsRouter.delete("/robot/:idRobot", deleteRobot);
 
 module.exports = robotsRouter;
