@@ -1,7 +1,13 @@
 const express = require("express");
 const debug = require("debug")("robots:router");
 const Robot = require("../../db/models/Robot");
-const { getAllRobots, getRobot } = require("../controllers/robotControllers");
+const {
+  getAllRobots,
+  getRobot,
+  createRobot,
+  updateRobot,
+  deleteRobot,
+} = require("../controllers/robotControllers");
 
 const robotsRouter = express.Router();
 
