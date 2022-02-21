@@ -5,11 +5,11 @@ const risetheServer = require("./server/index");
 
 const port = process.env.PORT || 4000;
 const mongoConnection = process.env.MONGO_STRING_PRODUCTION;
-const mongoConnectionUsers = process.env.MONGO_STRING_PRODUCTION_USERS;
 
 (async () => {
   try {
     await connectToDataBase(mongoConnection);
+
     await risetheServer(port);
   } catch (error) {
     debug(`Error: ${error.message}`);
