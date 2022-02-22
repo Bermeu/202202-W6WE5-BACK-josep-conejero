@@ -1,6 +1,4 @@
 const express = require("express");
-const debug = require("debug")("robots:router");
-const Robot = require("../../db/models/Robot");
 const verifyToken = require("../middlewares/verifyToken");
 
 const {
