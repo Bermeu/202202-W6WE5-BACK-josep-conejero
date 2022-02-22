@@ -9,6 +9,7 @@ const mongoConnection = process.env.MONGO_STRING_PRODUCTION;
 (async () => {
   try {
     await connectToDataBase(mongoConnection);
+
     await risetheServer(port);
   } catch (error) {
     debug(`Error: ${error.message}`);

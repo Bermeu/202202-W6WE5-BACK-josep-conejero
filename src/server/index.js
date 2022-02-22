@@ -4,6 +4,8 @@ const morgan = require("morgan");
 const cors = require("cors");
 const helmet = require("helmet");
 const { notFoundError, generalError } = require("./middlewares/errors");
+
+const getTokenRouter = require("./routers/getTokenRouter");
 const robotsRouter = require("./routers/robotsRouter");
 
 const app = express();
@@ -28,6 +30,7 @@ app.use(express.json());
 app.use(helmet());
 
 app.use(cors());
+app.use("/login", getTokenRouter);
 app.use("/robots", robotsRouter);
 
 app.use(notFoundError);

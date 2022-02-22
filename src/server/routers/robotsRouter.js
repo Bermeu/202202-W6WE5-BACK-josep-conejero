@@ -1,6 +1,6 @@
 const express = require("express");
-const debug = require("debug")("robots:router");
-const Robot = require("../../db/models/Robot");
+const verifyToken = require("../middlewares/verifyToken");
+
 const {
   getAllRobots,
   getRobot,
@@ -13,8 +13,8 @@ const robotsRouter = express.Router();
 
 robotsRouter.get("/", getAllRobots);
 robotsRouter.get("/:idRobot", getRobot);
-robotsRouter.post("/new-robot", createRobot);
-robotsRouter.put("/robot/:idRobot", updateRobot);
-robotsRouter.delete("/robot/:idRobot", deleteRobot);
+robotsRouter.post("/new-robot", verifyToken, createRobot);
+robotsRouter.put("/robot/:idRobot", verifyToken, updateRobot);
+robotsRouter.delete("/robot/:idRobot", verifyToken, deleteRobot);
 
 module.exports = robotsRouter;
